@@ -136,7 +136,7 @@ if (@$_REQUEST['botao'] == "Gravar")
 	if (!$_REQUEST['id']) 
 	{
         $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : null;
-		$insere = "INSERT into prontfixo (numpront, aluno, semestre, data_abertura, nome_completo, data_nasc, genero, genero_texto, endereco, telefone, email, nome_emerg, num_emerg, escolaridade, ocupacao, nec_esp, nec_esp_texto, estagiario, orientador) VALUES ('{$_POST['numpront']}', '{$_POST['aluno']}', '{$_POST['semestre']}', '{$_POST['data_abertura']}', '{$_POST['nome_completo']}', '{$_POST['data_nasc']}', '{$_POST['genero']}', '{$_POST['genero_texto']}', '{$_POST['endereco']}', '{$_POST['telefone']}', '{$_POST['email']}', '{$_POST['nome_emerg']}', '{$_POST['num_emerg']}', '{$_POST['escolaridade']}', '{$_POST['ocupacao']}', '{$_POST['nec_esp']}', '{$_POST['nec_esp_texto']}', '{$_POST['estagiario']}', '{$_POST['orientador']}')";
+		$insere = "INSERT into prontfixo (numpront, aluno, semestre, data_abertura, nome_completo, data_nasc, genero, genero_texto, endereco, telefone, email, nome_emerg, num_emerg, escolaridade, ocupacao, nec_esp, nec_esp_texto, histFamiliar, histSocial, finais, estagiario, orientador) VALUES ('{$_POST['numpront']}', '{$_POST['aluno']}', '{$_POST['semestre']}', '{$_POST['data_abertura']}', '{$_POST['nome_completo']}', '{$_POST['data_nasc']}', '{$_POST['genero']}', '{$_POST['genero_texto']}', '{$_POST['endereco']}', '{$_POST['telefone']}', '{$_POST['email']}', '{$_POST['nome_emerg']}', '{$_POST['num_emerg']}', '{$_POST['escolaridade']}', '{$_POST['ocupacao']}', '{$_POST['nec_esp']}', '{$_POST['nec_esp_texto']}', '{$_POST['histFamiliar']}','{$_POST['histSocial']}','{$_POST['finais']}','{$_POST['estagiario']}', '{$_POST['orientador']}')";
 		$result_insere = mysqli_query($con, $insere);
 		
 		if ($result_insere) echo "<h2> Registro inserido com sucesso!!!</h2>";
@@ -163,9 +163,9 @@ if (@$_REQUEST['botao'] == "Gravar")
           , ocupacao = '{$_POST['ocupacao']}'
           , nec_esp = '{$_POST['nec_esp']}'
           , nec_esp_texto = '{$_POST['nec_esp_texto']}'
-          , histFamiliar = '{$_POST['histFamiliar']}'// incluir na tabela
-          , histSocial = '{$_POST['histSocial']}'// incluir na tabela
-          , finais = '{$_POST['finais']}'// inlcuir na tabela
+          , histFamiliar = '{$_POST['histFamiliar']}'
+          , histSocial = '{$_POST['histSocial']}'
+          , finais = '{$_POST['finais']}'
           , estagiario = '{$_POST['estagiario']}'
           , orientador = '{$_POST['orientador']}'
 					WHERE id = '{$_REQUEST['id']}'
@@ -306,6 +306,7 @@ if (@$_REQUEST['botao'] == "Gravar")
         <div class="form-group">
             <label for="finais">Considerações Finais:</label>
             <input type="text" name="finais" id="finais" value="<?php echo @$_POST['finais']; ?>">
+            
         </div>
 
         <div class="form-group">

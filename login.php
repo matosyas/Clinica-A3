@@ -23,7 +23,7 @@ if (@$_REQUEST['botao']=="Entrar")
 <form action=# method=post>
 
 Número da Matrícula: <input type=text name=matricula>
-Senha: <input type=text name=senha>
+Senha: <input type=password name=senha>
 <input type=submit name=botao value=Entrar>
 
 </form>

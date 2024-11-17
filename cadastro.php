@@ -73,6 +73,10 @@ if (@$_REQUEST['botao'] == "Gravar")
     <td width="131"><?php echo @$_POST['id']; ?>&nbsp;
   </tr>
   <tr>
+    <td>Matrícula:</td>
+    <td><input type="text" name="matricula" value="<?php echo @$_POST['matricula']; ?>"></td>
+  </tr>
+  <tr>
     <td>Nome:</td>
     <td><input type="text" name="nome" value="<?php echo @$_POST['nome']; ?>"></td>
   </tr>
@@ -82,12 +86,9 @@ if (@$_REQUEST['botao'] == "Gravar")
   </tr>
   <tr>
     <td>Senha:</td>
-    <td><input type="text" name="senha" value="<?php echo @$_POST['senha']; ?>"></td>
+    <td><input type="password" name="senha" value="<?php echo @$_POST['senha']; ?>"></td>
   </tr>
-  <tr>
-    <td>Matrícula:</td>
-    <td><input type="text" name="matricula" value="<?php echo @$_POST['matricula']; ?>"></td>
-  </tr>
+
   <tr>
     <td colspan="2" align="right"><input type="submit" value="Gravar" name="botao"> - <input type="submit" value="Excluir" name="botao">
     -

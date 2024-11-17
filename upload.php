@@ -59,10 +59,9 @@ $sql_query = $mysqli->query ("SELECT * FROM arquivos") or die ($mysqli->error);
     </form>
     <h1>Lista de arquivos</h1>
     <table border="1" cellpadding="10">
-        <thead>
-        <th>Preview</th>    
+        <thead>   
         <th>Arquivo</th>
-        <th> Data de envio </th>
+        <th>Data de envio</th>
         </thead>
         
         <tbody>
@@ -72,7 +71,7 @@ $sql_query = $mysqli->query ("SELECT * FROM arquivos") or die ($mysqli->error);
     
     ?>
 <tr>
-            <td><img src="" alt=""> </td>
+
             <td><a  target="_blank" href="<?php echo $arquivo['path']; ?>"><?php echo $arquivo['nome'];?></a></td>
             <td><?php echo date("d/m/Y H:i", strtotime($arquivo['data_upload'])); ?></td>
 
